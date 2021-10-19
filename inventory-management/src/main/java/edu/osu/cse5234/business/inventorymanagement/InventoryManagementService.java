@@ -1,6 +1,7 @@
 package edu.osu.cse5234.business.inventorymanagement;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
@@ -26,6 +27,41 @@ public class InventoryManagementService {
 		return Response.ok(currentInventory).header("Access-Control-Allow-Origin", "*").build();
 	}
 	
-
+	public Response getItemByID(int id) {
+		Response r = this.getInventory();
+		Inventory test = r.readEntity(Inventory.class);
+		List<Item> items = test.getItemList();
+		
+		int i= 0;
+		boolean find=false;
+		while(find=(items.get(i).getPid()!= id) && items.size()<i) {
+			i++;
+		}
+		
+		if(find) {
+			return Response.ok(items.get(i)).header("Access-Control-Allow-Origin", "*").build();
+		}else {
+			return null;
+		}
+		
+}
+	public Response getItemByName(String name) {
+		Response r = this.getInventory();
+		Inventory test = r.readEntity(Inventory.class);
+		List<Item> items = test.getItemList();
+		
+		int i= 0;
+		boolean find=false;
+		while(find=(items.get(i).getName()!= name) && items.size()<i) {
+			i++;
+		}
+		
+		if(find) {
+			return Response.ok(items.get(i)).header("Access-Control-Allow-Origin", "*").build();
+		}else {
+			return null;
+		}
+		
+}
 		
 }
