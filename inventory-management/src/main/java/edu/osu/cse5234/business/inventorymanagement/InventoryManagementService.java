@@ -25,39 +25,7 @@ public class InventoryManagementService {
 		currentInventory.setItemList(items);
 		return Response.ok(currentInventory).header("Access-Control-Allow-Origin", "*").build();
 	}
-	public Item getItemById(int id) {
-		Inventory currentInventory = this.getInventory();
-		ArrayList<Item> items =currentInventory.getItemList();
-		
-		int i= 0;
-		boolean find=false;
-		while(find=(items.get(i).getpId()!= id) && items.size()<i) {
-			i++;
-		}
-		
-		if(find) {
-			return items.get(i);
-		}else {
-			return null;
-		}
-		
-		
-	}
 	
-	public Item getItemByName(String name) {
-		Inventory currentInventory = this.getInventory();
-		ArrayList<Item> items =currentInventory.getItemList();
-		
-		int i= 0;
-		boolean find=false;
-		while(find=(items.get(i).getpName()!= name) && items.size()<i) {
-			i++;
-		}
-		
-		if(find) {
-			return items.get(i);
-		}else {
-			return null;
-		}
+
 		
 }
