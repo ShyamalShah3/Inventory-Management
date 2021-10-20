@@ -1,4 +1,4 @@
-package edu.osu.cse5234.business.inventorymanagement;
+package edu.osu.cse5234.business.OrderProcessing;
 
 public class Item {
 	private int pId;

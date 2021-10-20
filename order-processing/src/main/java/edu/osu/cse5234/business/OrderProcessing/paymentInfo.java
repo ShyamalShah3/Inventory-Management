@@ -1,4 +1,4 @@
-package edu.osu.cse5234.business.inventorymanagement;
+package edu.osu.cse5234.business.OrderProcessing;
 
 /**
  * @author hank2

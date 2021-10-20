@@ -2,6 +2,7 @@ package edu.osu.cse5234.business.inventorymanagement;
 
 import java.util.ArrayList;
 
+
 public class Inventory {
 
 	private ArrayList<Item> itemList;
@@ -17,6 +18,6 @@ public class Inventory {
 	public void setItemList(ArrayList<Item> itemList) {
 		this.itemList = itemList;
 	}
-	
-	
+
+
 }
