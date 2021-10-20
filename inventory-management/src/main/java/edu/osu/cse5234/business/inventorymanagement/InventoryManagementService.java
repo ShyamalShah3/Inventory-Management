@@ -6,6 +6,7 @@ import java.util.List;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
@@ -31,11 +32,11 @@ public class InventoryManagementService {
 		return Response.ok(this.currentInventory).header("Access-Control-Allow-Origin", "*").build();
 	}
 	@GET
-	@Path("ID")
+	@Path("ID/{id}")
 	@Produces(MediaType.APPLICATION_JSON)
 	@Consumes(MediaType.APPLICATION_JSON)
 
-	public Response getItemByID(@QueryParam("id")int id) {
+	public Response getItemByID(@PathParam("id")int id) {
 		this.getInventory();
 		List<Item> items = this.currentInventory.getItemList();
 		
