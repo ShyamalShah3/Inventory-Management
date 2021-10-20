@@ -63,7 +63,6 @@ public class InventoryManagementService {
 		while( i<items.size()&& !(find=(items.get(i).getName().equals(name)))) {
 			i++;
 		}
-		System.out.print(find);
 
 		if(find) {
 			return Response.ok(items.get(i)).header("Access-Control-Allow-Origin", "*").build();
