@@ -1,14 +1,14 @@
 package edu.osu.cse5234.business.inventorymanagement;
 
 public class Item {
-	private int pid;
+	private String pid;
 	private String name;
 	private String description;
 	private double price;
 	private String url;
 	private int quantity;
 	
-	public Item(int id, String name, String desc, double price, String url, int quantity) {
+	public Item(String id, String name, String desc, double price, String url, int quantity) {
 		this.pid = id;
 		this.name = name;
 		this.description = desc;
@@ -17,11 +17,11 @@ public class Item {
 		this.url = url;
 	}
 
-	public int getPid() {
+	public String getPid() {
 		return pid;
 	}
 
-	public void setPid(int pid) {
+	public void setPid(String pid) {
 		this.pid = pid;
 	}
 
