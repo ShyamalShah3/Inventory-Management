@@ -26,7 +26,7 @@ public class InventoryManagementService {
 	
 	private Inventory currentInventory;
 	private HttpClient client;
-	private String localInventory = "http://localhost:5001/cartsdotcom/us-central1/inventory/functions/getAllItems";
+	private String localInventory = "http://localhost:5001/cartsdotcom/us-central1/inventory";
 	//private String cloudInventory = "https://us-central1-cartsdotcom.cloudfunctions.net/inventory/functions/getAllitems";
 	@GET
 	@Path("getInventory")
@@ -67,7 +67,7 @@ public class InventoryManagementService {
 	@Produces(MediaType.APPLICATION_JSON)
 	@Consumes(MediaType.APPLICATION_JSON)
 
-	public Response getItemByID(@PathParam("id")int id) {
+	public Response getItemByID(@PathParam("String")String id) {
 		this.getInventory();
 		List<Item> items = this.currentInventory.getItemList();
 		
