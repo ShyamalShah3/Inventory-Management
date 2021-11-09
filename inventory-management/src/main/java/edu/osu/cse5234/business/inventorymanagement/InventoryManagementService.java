@@ -54,6 +54,7 @@ public class InventoryManagementService {
 				items.add(new Item(id, name, description, price, url, quantity));
 				
 			}
+			System.out.println("poop");
 			
 		}catch (Exception e) {
 			System.out.println("Failed");
