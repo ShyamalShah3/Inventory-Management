@@ -21,7 +21,7 @@ public class CreditCardProcessingService {
 		JsonReader jsonR = Json.createReader(new StringReader(pInfo));
 		JsonObject json = jsonR.readObject();
 		PaymentInfo paymentInfo = new PaymentInfo(json.get("cardName").toString(), json.get("cardNum").toString(), json.get("expiration").toString(), json.get("cvv").toString());
-		System.out.println("Order received from customer: \n" + paymentInfo);
+		System.out.println("Order received from customer: \n");
 		String result = "1001";
 		return result;
 	}
